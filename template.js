@@ -37,7 +37,7 @@ exports.template = function(grunt, init, done) {
     init.prompt('name'),
     init.prompt('description'),
     init.prompt('version'),
-    init.prompt('repository_name', 'nas'),
+    init.prompt('repository_name', 'origin'),
     init.prompt('repository'),
     init.prompt('repository_branch', 'master'),
     init.prompt('homepage', 'http://{%= name %}.com'),
