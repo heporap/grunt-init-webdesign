@@ -11,6 +11,14 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> */\n',
     // Task configuration.
     clean: {
+      buld: [
+//        '<%= pkg.htdocs %>/css/style.min.css',
+          '<%= uglify.dist.dest %>'
+      ],
+      tmp: [
+        '<%= concat.dist.dest %>',
+        '<%= autoprefixer.files.dest %>*.css'
+      ]
     },
     concat: {
       options: {
