@@ -8,9 +8,12 @@
 
 This will compile the files.
 
-src/cssディレクトリの中の.cssファイルがひとまとめになって、htdocs/css/style.min.cssファイルに保存されます。 src/jsディレクトリの中の.jsファイルがひとまとめになって、htdocs/css/script.min.jsファイルに保存されます。 libディレクトリの.cssファイル、.jsファイルはそれぞれhtdocs/css、htdocs/jsディレクトリにコピーされます。サードパーティー製のライブラリなどを保存してください。
+**src/css**ディレクトリの中の.cssファイルがひとまとめになって、**htdocs/css/style.min.css**ファイルに保存されます。
+**src/js**ディレクトリの中の.jsファイルがひとまとめになって、**htdocs/css/script.min.js**ファイルに保存されます。
+**lib**ディレクトリの.cssファイル、.jsファイルはそれぞれhtdocs/css、htdocs/jsディレクトリにコピーされます。サードパーティー製のライブラリなどを保存してください。
 
-This will copy src/js/*.js files to htdocs/js/script.min.js with compression, src/css/.css to **htdocs/css/style.min.css. Also lib/*.css and lib/*.js will be copied.
+
+This will copy **src/js/*.js** files to **htdocs/js/script.min.js** with compression, **src/css/*.css* to **htdocs/css/style.min.css**. Also **lib/*.css** and **lib/*.js** will be copied.
 
 ## miscellaneous
 
