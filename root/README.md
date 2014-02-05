@@ -1,57 +1,18 @@
-# {%= name %}
+#grunt commands
 
-{%= description %}
+`
+#grunt
+`
+コンパイルを行います。
 
-## Getting Started
-### On the server
-Install the module with: `npm install {%= name %}`
+This will compile the files.
 
-```javascript
-var {%= js_safe_name %} = require('{%= name %}');
-{%= js_safe_name %}.awesome(); // "awesome"
-```
+src/cssディレクトリの中の.cssファイルがひとまとめになって、htdocs/css/style.min.cssファイルに保存されます。 src/jsディレクトリの中の.jsファイルがひとまとめになって、htdocs/css/script.min.jsファイルに保存されます。 libディレクトリの.cssファイル、.jsファイルはそれぞれhtdocs/css、htdocs/jsディレクトリにコピーされます。サードパーティー製のライブラリなどを保存してください。
 
-### In the browser
-Download the [production version][min] or the [development version][max].
+This will copy src/js/*.js files to htdocs/js/script.min.js with compression, src/css/.css to **htdocs/css/style.min.css. Also lib/*.css and lib/*.js will be copied.
 
-[min]: https://raw.github.com/{%= git_user %}/{%= git_repo %}/master/dist/{%= name %}.min.js
-[max]: https://raw.github.com/{%= git_user %}/{%= git_repo %}/master/dist/{%= name %}.js
+## miscellaneous
 
-In your web page:
+構成を変更する場合は、Gruntfile.js、package.jsonを改変してください。
 
-```html
-<script src="dist/{%= name %}.min.js"></script>
-<script>
-awesome(); // "awesome"
-</script>
-```
-
-In your code, you can attach {%= name %}'s methods to any object.
-
-```html
-<script>
-var exports = Bocoup.utils;
-</script>
-<script src="dist/{%= name %}.min.js"></script>
-<script>
-Bocoup.utils.awesome(); // "awesome"
-</script>
-```
-
-## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-_Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt. You'll find source code in the "lib" subdirectory!_
-
-## Release History
-_(Nothing yet)_
-
-## License
-Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}  
-Licensed under the {%= licenses.join(', ') %} license{%= licenses.length === 1 ? '' : 's' %}.
+Edit Gruntfile.js, package.json to change the constructions.
