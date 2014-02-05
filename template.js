@@ -43,6 +43,7 @@ exports.template = function(grunt, init, done) {
     init.prompt('homepage', 'http://{%= name %}.com'),
     init.prompt('htdocs', './htdocs'),
     init.prompt('bugs'),
+    init.prompt('licenses', 'MIT'),
     init.prompt('author_name'),
     init.prompt('author_email'),
     init.prompt('author_url'),
