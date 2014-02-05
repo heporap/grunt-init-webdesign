@@ -81,7 +81,7 @@ exports.template = function(grunt, init, done) {
 
     var writePackageJSONcallback = function(pkg, props){
 
-      pkg.public_html = props.public_html;
+      pkg.htdocs = props.htdocs;
 
       return pkg;
     };
