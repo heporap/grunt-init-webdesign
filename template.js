@@ -59,6 +59,7 @@ exports.template = function(grunt, init, done) {
       'grunt-contrib-nodeunit': '~0.2.0',
       'grunt-contrib-watch': '~0.4.0',
       "grunt-contrib-clean": "~0.5.0",
+      "grunt-contrib-copy": "~0.5.0",
       "grunt-pngmin": "~0.6.1",
       "grunt-autoprefixer": "~0.6.4",
       "grunt-contrib-imagemin": "~0.5.0",
