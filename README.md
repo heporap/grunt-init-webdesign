@@ -1,7 +1,8 @@
-# grunt-init-localsite
+# grunt-init-webdesign
 
-> localhostでアクセスするサイト用プロジェクトを[grunt-init][]ベースで作成するテンプレートです。
-> Create a localsite project with [grunt-init][], including Nodeunit unit tests.
+ウェブサイト用プロジェクトを[grunt-init][]ベースで作成するテンプレートです。
+
+Create a localsite project with [grunt-init][], including Nodeunit unit tests.
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
 
@@ -15,7 +16,7 @@ If you haven't already done so, install [grunt-init][].
 Once grunt-init is installed, place this template in your `~/.grunt-init/` directory. It's recommended that you use git to clone this template into that directory, as follows:
 
 ```
-git clone git@github.com:heporap/grunt-init-localsite.git ~/.grunt-init/localsite
+git clone git@github.com:heporap/grunt-init-webdesign.git ~/.grunt-init/webdesign
 ```
 
 _(Windowsユーザーは[grunt-initのドキュメント][grunt-init]を読んでください。)_
@@ -29,22 +30,22 @@ _(Windows users, see [the documentation][grunt-init] for the correct destination
 At the command-line, cd into an empty directory, run this command and follow the prompts.
 
 ```
-grunt-init localsite
+grunt-init webdesign
 ```
 
-ファイルの生成が完了すると、`git init`コマンドと、`git remote add repository_name repository_local `コマンドを実行します。
+ファイルの生成が完了すると、`git init`、`git add .`、`git remote add repository_name repository` コマンドを実行します。
 
 repository_name に"none"を指定するとgit remoteは実行しません。
 
-This will run `git init` and `git remote add repository_name repository_local`. If repository_name was set "none", this will not do "git remote".
+This will run `git init`, `git add .`, `git remote add repository_name repository`. If repository_name was set "none", this will not do "git remote".
 
 _このテンプレートはカレントディレクトリの内容を書き換えます。ディレクトリに何もない事を確認してください。_
 
 _Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files._
 
-_`grunt-init`コマンドを実行した後に`npm install`を実行し、関連するライブラリをインストールしてください。_
+`grunt-init`コマンドを実行した後に`npm install`を実行し、関連するライブラリをインストールしてください。
 
-_Run `npm install` after grunt-init to instal relative libraries._
+Run `npm install` after grunt-init to instal relative libraries.
 
 ## miscellaneous
 構成を変更する場合は、Gruntfile.js、package.jsonを改変してください。
@@ -61,21 +62,9 @@ Edit Gruntfile.js, package.json to change the constructions.
 
 This will compile the files.
 
-```
-#grunt public_html
-```
+**src/css**ディレクトリの中の.cssファイルがひとまとめになって、**htdocs/css/style.min.css**ファイルに保存されます。
+**src/js**ディレクトリの中の.jsファイルがひとまとめになって、**htdocs/css/script.min.js**ファイルに保存されます。
+**lib**ディレクトリの.cssファイル、.jsファイルはそれぞれhtdocs/css、htdocs/jsディレクトリにコピーされます。サードパーティー製のライブラリなどを保存してください。
 
-**public_html**ディレクトリの中にあるファイルが公開用ディレクトリにコピーされます。
-公開用ディレクトリ内では、destの内容は&lt;script src="dest/プロジェクト名.min.js"&gt;&lt;/script&gt;で読み込めます。
-公開ディレクトリのディレクトリ名は、初期設定時のpublic_html設問、ならびにpackage.jsonの "public_html" で指定されたディレクトリです。
-デフォルトは Sites です。(/Users/ユーザー名/Sitesではなく、プロジェクトディレクトリ内にSitesディレクトリを作成します。）
 
-This will copy files in **public_html directory** to **public_html setting** in package.json. And **dest** directory will be copied in the public_html setting directory. The default setting of public_html setting is "Sites".
-
-```
-#grunt public_build
-```
-
-コンパイル後に公開ディレクトリにコピーします。
-
-This will copy files to the Sites directory after compiling.
+This will copy **src/js/*.js** files to **htdocs/js/script.min.js** with compression, **src/css/*.css* to **htdocs/css/style.min.css**. Also **lib/*.css** and **lib/*.js** will be copied.
