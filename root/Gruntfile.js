@@ -11,8 +11,6 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> */\n'
     // Task configuration.
     clean: {
-      build: ["<%= pkg.htdocs %>/**/*.{css|js|png|jpg|gif}"],
-      tmp: ["<%= pkg.htdocs %>/css/pre/*.css", "<%= concat.dist.dest %>"]
     },
     concat: {
       options: {
