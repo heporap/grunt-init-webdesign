@@ -80,33 +80,7 @@ module.exports = function(grunt) {
         }]
       }
     },
-    nodeunit: {
-      files: ['test/**/*_test.js']
-    },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      test: {
-        src: ['test/**/*.js']
-      },
-    },
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
-      lib: {
-        files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib', 'nodeunit']
-      },
-      test: {
-        files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'nodeunit']
-      },
       js:{
         files: ['src/**/*.js'],
         tasks: ['concat', 'ugrify']
@@ -126,8 +100,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-autoprefixer');
@@ -136,6 +108,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-pngmin');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit', 'clean:build', 'autoprefixer', 'cssmin', 'clean:tmp', 'imagemin', 'pngmin', 'concat', 'uglify']);
+  grunt.registerTask('default', ['clean:build', 'autoprefixer', 'cssmin', 'clean:tmp', 'imagemin', 'pngmin', 'concat', 'uglify']);
 
 };
