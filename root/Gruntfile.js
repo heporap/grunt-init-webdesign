@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> */\n',
     // Task configuration.
     clean: {
-      buld: [
+      build: [
 //        '<%= pkg.htdocs %>/css/style.min.css',
           '<%= uglify.dist.dest %>'
       ],
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
       files: {
         expand: true,
         flatten: true,
-        src: 'src/*.css',
+        src: 'src/css/*.css',
         dest: '<%= pkg.htdocs %>/css/pre/'
       }
     },
